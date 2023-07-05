@@ -23,7 +23,9 @@
                 alert('잘못된 경로입니다.');
                 location.href = 'index.html';
             } 
-            
+            printContacts(result.contacts);
+            const pagination = getPagination(result);
+            printPagination(pagination);
         });
         
     </script>
@@ -45,22 +47,20 @@
         <main>
             <aside></aside>
             <section>
-                <div id="section">
-                    <table class="table">
+                    <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th>번호</th>
                                 <th>이름</th>
-                                <th>주소</th>
                                 <th>연락처</th>
+                                <th>주소</th>
                             </tr>
                         </thead>
-                        <tbody id="tbody"></tbody>
+                        <tbody id="tbody">
+                        </tbody>
                     </table>
-                    <ul class="pagination" id="pagination">
-                        
+                    <ul class="pagination" id="pagination" style="display: flex; justify-content: center;">
                     </ul>
-                </div>
             </section>
             <aside></aside>
         </main>
